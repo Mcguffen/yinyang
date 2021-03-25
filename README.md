@@ -468,3 +468,9 @@ document.onmouseup = function(){
 
 ```
 
+### 加入TypeScipt
+### npx parcel index.html
+``` bash
+cd ./yinyang
+npx parcel index.html
+```
