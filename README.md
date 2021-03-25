@@ -500,3 +500,5 @@ tsconfig.json
     }
 }
 ```
+
+#### npx parcel build --public-url ./ index.html
