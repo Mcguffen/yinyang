@@ -217,6 +217,29 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 
     top: 40px;
 
 }
+``` 
+让八卦居中
+``` css
+        /* 居中 */
+    margin: 100px auto;
 ```
+``` css
+#yinyang{
+    border: 1px solid red;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(0,0,0,1) 50%, rgba(0,0,0,1) 100%);
+    /* 相对定位 */
+    position: relative;
+        /* 居中 */
+    margin: 100px auto;
+}
 
+```
+换个背景色
 
+``` css
+body{
+    background: #ddd;
+}
