@@ -303,4 +303,48 @@ body{
 ```
 发现并不能嵌套
 那么最小的两个小圆怎么做呢？
-用渐变
+还是用
+渐变/border
+ 渐变：这次我们用css3的知识渐变来做。
+    搜索
+    css3 linear gradient generator
+然后自己设置 
+还可以用border来做。
+border 自己调整大小 宽高 颜色
+``` css
+#yinyang::before{
+    /* border: 1px solid green; */
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background:#ffffff;
+    /* 绝对定位 */
+    position: absolute;
+    top: 50px;
+
+   
+    content: "";
+    /* 用border来做最后两个最小的圆 因为设置了border大小所以八卦宽高自己调整 */
+    border:40px solid #000000;
+}
+```
+同另外一个
+``` css
+#yinyang::after{
+    /* border: 1px solid yellow; */
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #000000;
+    /* 绝对定位 */
+    position: absolute;
+    top:50px;
+    right: 0;
+
+    content: "";
+        /* 用border来做最后两个最小的圆 因为设置了border大小所以八卦宽高自己调整 */
+    border:40px solid #ffffff;
+}
+```
+
+下面 加动画让他转起来
