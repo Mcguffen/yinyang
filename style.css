@@ -8,6 +8,12 @@
     position: relative;
         /* 居中 */
     margin: 100px auto;
+
+  /*加动画 去声明关键帧 然后 怎么一直转 加infinite意思无限的*/
+  /* 转的也太不自然了吧 加一个linear 线性的转  感觉快就调大，1s一圈改10s一圈试试*/
+  /* 参数顺序不重要 会自动匹配 */
+  animation: spin 10s infinite linear;
+
 }
 #yinyang::before{
     /* border: 1px solid green; */
@@ -46,4 +52,17 @@
 
 body{
     background: #ddd;
+}
+
+/*声明关键帧，这个动画一些关键的位置*/
+@keyframes spin {
+  /* 一开始的位置 */
+  form {
+    /* 一开始转0度 */
+    transform: rotate(0deg);
+  }
+  /* 最后 转360度*/
+  to {
+    transform: rotate(360deg);
+  }
 }
