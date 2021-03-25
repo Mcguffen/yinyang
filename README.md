@@ -243,3 +243,28 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 
 body{
     background: #ddd;
 }
+
+以上是用div写八卦
+我们为什么不用伪类代替div来做？
+
+那么就把之前的div删掉
+``` html
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>☯️八卦</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="yinyang">
+    </div>
+</body>
+</html>
+```
+
+``` css
+
+```
