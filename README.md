@@ -95,4 +95,84 @@ div::after{
     border-radius: 50%;
 }
 ```
+    然后，这个圆上面白下面黑。
+    你当然可以用div做。
+    这次我们用css3的知识渐变来做。
+    搜索
+    css3 linear gradient generator
+    在线网址调节你想要的效果，然后复制粘贴。
+    白色ffffff黑色000000
+    50%处设置左白又黑 51处选黑
+    0%          50%         51%          100%
+    ffffff      ffffff      000000      000000
+    这样得到下面的样式
+``` css
+background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(0,0,0,1) 51%, rgba(0,0,0,1) 100%);
+```
+现在圆就变成了上白下黑。想要左白又黑就把180deg变成90deg，想要啥效果自己调整一下，试试。
+
+去画突出来的两个小圆。
+先做第一个
+```
+#yinyang > .one{
+    border: 1px solid green;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background:#000000;
+}
+```
+这样就得到一个小黑球
+让小黑球往下移动一下
+使用绝对定位
+就是小黑球绝对定位
+大球相对定位
+``` css
+#yinyang{
+    border: 1px solid red;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(0,0,0,1) 50%, rgba(0,0,0,1) 100%);
+    position: relative;
+}
+#yinyang > .one{
+    border: 1px solid green;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background:#000000;
+    position: absolute;
+}
+```
+下移动50px
+``` css
+#yinyang > .one{
+    border: 1px solid green;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background:#000000;
+    /* 绝对定位 */
+    position: absolute;
+    top: 50px;
+}
+```
+同理第二个球，在一个球的基础上修改 然后调整位置。
+``` css
+#yinyang > .two{
+    border: 1px solid yellow;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background:#ffffff;
+    /* 绝对定位 */
+    position: absolute;
+    top:50px;
+    right: 0;
+}
+```
+同理，再去画2个小圆。
+
+
 
