@@ -34,12 +34,12 @@ document.onmousemove = function(e){
             // 防止div跑出页面 下面是 防止往左和防止放上 那么如果往右和往下呢？
             var resultY = top + deltaY
             var resultX = left + deltaX
-            if(resultY < 0){
-                resultY = 0
-            }
-            if(resultX< 0){
-                resultX = 0
-            }
+            // if(resultY < 0){
+            //     resultY = 0
+            // }
+            // if(resultX< 0){
+            //     resultX = 0
+            // }
             div1.style.top = resultY + 'px'
             div1.style.left = resultX + 'px'
             // 然后发现数值很离谱 那是因为我们应该是每次移动和上次的位置对比

@@ -1,3 +1,0 @@
-#yinyang{border:1px solid red;width:200px;height:200px;border-radius:50%;background:linear-gradient(180deg,#fff,#fff 50%,#000 0,#000);position:relative;margin:100px auto;animation:spin 10s linear infinite;box-shadow:0 0 5px 3px rgba(0,0,0,.75)}#yinyang:before{border-radius:50%;background:#fff;border:40px solid #000}#yinyang:after,#yinyang:before{width:20px;height:20px;position:absolute;top:50px;content:""}#yinyang:after{border-radius:50%;background:#000;right:0;border:40px solid #fff}body{background:#ddd}@keyframes spin{form{transform:rotate(0deg)}to{transform:rotate(1turn)}}
-
-/*# sourceMappingURL=index.HASH_REF_1535f2b190897ad0190a39508d30e84b.css.map */
