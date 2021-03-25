@@ -469,8 +469,34 @@ document.onmouseup = function(){
 ```
 
 ### 加入TypeScipt
-### npx parcel index.html
+如果不借助工具 将ts文件引入html运行会报错
+Uncaught SyntaxError: Unexpected token ':'
+所以我们用工具
+#### npx parcel index.html
+在这之前一定要先把main.ts修改好。
+否则
 ``` bash
 cd ./yinyang
 npx parcel index.html
+```
+
+报错：Build failed.
+@parcel/transformer-babel: Config result is not hashable because it contains non-serializable objects. Please use config.setResultHash to set the hash manually.
+
+```
+npm init
+```
+#### tsconfig.json
+tsconfig.json
+``` json
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "noImplicitAny": true,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "sourceMap": true,
+        "strict": true
+    }
+}
 ```
