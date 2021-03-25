@@ -20,15 +20,7 @@
 
 }
 
-/* 媒体查询 为手机页面做适配 当你的设备页面<=500px的时候元素样式八卦宽高变成下面 */
-@media(max-width: 500px){
-    #yiinyang{
-    /* border: 1px solid red; */
-    width: 100px;
-    height: 100px;
-    
-    }
-}
+
 
 #yinyang::before{
     /* border: 1px solid green; */
