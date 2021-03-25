@@ -502,3 +502,138 @@ tsconfig.json
 ```
 
 #### npx parcel build --public-url ./ index.html
+
+### 手机适配
+咋做手机页面？打开开发者工具 f12 按下去
+选中手机/ipad 图标，你发现这八卦也太大了把？把它弄小？nono 不是说不行，那 pc 页面的八卦大小你怎么不觉着大呢？所以我们应该为手机写一个配置。手机上 html 一定要有这行代码
+
+```html
+<meta name="viewport" content="width-device-width,initial-scale=1.0" />
+```
+
+没有这行 就像你用诺基亚老爷机看这个页面。
+所以我们需要
+媒体查询
+当你的媒体设备哦跑最大宽度 < =500px 的时候就为下面元素的添加额外的样式是这样
+
+```css
+@media(max-width: 500px){
+    #八卦{
+        样式
+    }
+}
+```
+
+所以，相当于另外写一套·适合手机看的配置。 你也可以直接把参数除以2.
+``` css
+/* 媒体查询 为手机页面做适配 当你的设备页面<=500px的时候元素样式八卦宽高变成下面 */
+#yinyang{
+    /* border: 1px solid red; */
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(0,0,0,1) 50%, rgba(0,0,0,1) 100%);
+    /* 相对定位 */
+    position: relative;
+        /* 居中 */
+    margin: 100px auto;
+
+  /*加动画 去声明关键帧 然后 怎么一直转 加infinite意思无限的*/
+  /* 转的也太不自然了吧 加一个linear 线性的转  感觉快就调大，1s一圈改10s一圈试试*/
+  /* 参数顺序不重要 会自动匹配 */
+  animation: spin 10s infinite linear;
+    /* 总觉八卦不明显 加一个css3属性 阴影 */
+  /* 不会用就搜 你要的属性+generator */
+  box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.75);
+  
+
+}
+@media(max-width: 500px){
+    #yiinyang{
+    /* border: 1px solid red; */
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(0,0,0,1) 50%, rgba(0,0,0,1) 100%);
+    /* 相对定位 */
+    position: relative;
+        /* 居中 */
+    margin: 50px auto;
+
+  /*加动画 去声明关键帧 然后 怎么一直转 加infinite意思无限的*/
+  /* 转的也太不自然了吧 加一个linear 线性的转  感觉快就调大，1s一圈改10s一圈试试*/
+  /* 参数顺序不重要 会自动匹配 */
+  animation: spin 10s infinite linear;
+    /* 总觉八卦不明显 加一个css3属性 阴影 */
+  /* 不会用就搜 你要的属性+generator */
+  box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.75);
+    }
+}
+
+#yinyang::before{
+    /* border: 1px solid green; */
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background:#ffffff;
+    /* 绝对定位 */
+    position: absolute;
+    top: 50px;
+
+    content: "";
+    /* 用border来做最后两个最小的圆 因为设置了border大小所以八卦宽高自己调整 */
+    border:40px solid #000000;
+}
+
+@media(max-width: 500px){
+#yinyang::before{
+    /* border: 1px solid green; */
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background:#ffffff;
+    /* 绝对定位 */
+    position: absolute;
+    top: 20px;
+
+    content: "";
+    /* 用border来做最后两个最小的圆 因为设置了border大小所以八卦宽高自己调整 */
+    border:20px solid #000000;
+}
+}
+
+
+#yinyang::after{
+    /* border: 1px solid yellow; */
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #000000;
+    /* 绝对定位 */
+    position: absolute;
+    top:50px;
+    right: 0;
+
+    content: "";
+        /* 用border来做最后两个最小的圆 因为设置了border大小所以八卦宽高自己调整 */
+    border:40px solid #ffffff;
+}
+ 
+@media(max-width: 500px){
+#yinyang::after{
+    /* border: 1px solid yellow; */
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #000000;
+    /* 绝对定位 */
+    position: absolute;
+    top:25px;
+    right: 0;
+
+    content: "";
+        /* 用border来做最后两个最小的圆 因为设置了border大小所以八卦宽高自己调整 */
+    border:20px solid #ffffff;
+}
+}
+```
