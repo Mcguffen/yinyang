@@ -29,7 +29,7 @@ div::after{
 } 
 ```
 然后我们在控制台看到
-``` hmtl
+``` html
 <body>
     <div>
     ::before
@@ -45,7 +45,7 @@ div::after{
  但是你复制却只能复制Hi
  这两个不能复制的就是伪元素。
  然后你再写一个div发现 所有的div都带有这2个伪元素
- ``` hmtl
+``` html
 <body>
     <div>
         Hi
@@ -69,6 +69,30 @@ div::after{
  这样他就独占一行 
 
  ### 做一个☯️八卦
- 
- 
+    首先，先画一个圆
+``` html
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>☯️八卦</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="yinyang">
+        
+    </div>
+</body>
+</html>
+```
+``` css
+#yinyang{
+    border: 1px solid red;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+```
 

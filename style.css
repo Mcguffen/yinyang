@@ -1,8 +1,6 @@
-div::before{
-    content: "「";
-    /* display: block; */
-} 
-div::after{
-    content:" 」";
-    /* display: block; */
-} 
+#yinyang{
+    border: 1px solid red;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
