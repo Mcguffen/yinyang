@@ -266,5 +266,41 @@ body{
 ```
 
 ``` css
+#yinyang::before{
+    /* border: 1px solid green; */
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background:#000000;
+    /* 绝对定位 */
+    position: absolute;
+    top: 50px;
 
+    display: block;
+    content: "";
+}
+#yinyang::after{
+    /* border: 1px solid yellow; */
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background:#ffffff;
+    /* 绝对定位 */
+    position: absolute;
+    top:50px;
+    right: 0;
+    
+    display: block;
+    content: "";
+}
 ```
+这样就用伪类代替了2个div 但是被代替的两个div里面还有div呢？
+那么伪类里面还可以装一个伪类吗？是不行的
+``` css
+#yinyang::before::before{
+    content:"hi"
+}
+```
+发现并不能嵌套
+那么最小的两个小圆怎么做呢？
+用渐变

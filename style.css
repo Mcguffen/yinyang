@@ -9,7 +9,7 @@
         /* 居中 */
     margin: 100px auto;
 }
-#yinyang > .one{
+#yinyang::before{
     /* border: 1px solid green; */
     width: 100px;
     height: 100px;
@@ -19,6 +19,8 @@
     position: absolute;
     top: 50px;
 
+    display: block;
+    content: "";
 }
 
 #yinyang > .one > .circle{
@@ -34,7 +36,7 @@
 
 }
 
-#yinyang > .two{
+#yinyang::after{
     /* border: 1px solid yellow; */
     width: 100px;
     height: 100px;
@@ -44,6 +46,9 @@
     position: absolute;
     top:50px;
     right: 0;
+    
+    display: block;
+    content: "";
 }
 #yinyang > .two > .circle{
     border: 1px solid green;
