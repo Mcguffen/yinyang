@@ -17,6 +17,20 @@
     position: absolute;
     top: 50px;
 }
+
+#yinyang > .one > .circle{
+    border: 1px solid green;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background:#ffffff;
+        /* 绝对定位 */
+    position: absolute;
+    left: 40px;
+    top: 40px;
+
+}
+
 #yinyang > .two{
     /* border: 1px solid yellow; */
     width: 100px;
@@ -27,4 +41,16 @@
     position: absolute;
     top:50px;
     right: 0;
+}
+#yinyang > .two > .circle{
+    border: 1px solid green;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background:#000000;
+        /* 绝对定位 */
+    position: absolute;
+    left: 40px;
+    top: 40px;
+
 }

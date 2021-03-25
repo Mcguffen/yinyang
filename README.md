@@ -101,10 +101,10 @@ div::after{
     搜索
     css3 linear gradient generator
     在线网址调节你想要的效果，然后复制粘贴。
-    白色ffffff黑色000000
+    白色#ffffff黑色#000000
     50%处设置左白又黑 51处选黑
     0%          50%         51%          100%
-    ffffff      ffffff      000000      000000
+    #ffffff      #ffffff      #000000      #000000
     这样得到下面的样式
 ``` css
 background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(0,0,0,1) 51%, rgba(0,0,0,1) 100%);
@@ -173,6 +173,50 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 
 }
 ```
 同理，再去画2个小圆。
+``` html
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>☯️八卦</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="yinyang">
+        <div class="one"><div class="circle"></div></div>
+        <div class="two"><div class="circle"></div></div>
+    </div>
+</body>
+</html>
+```
 
+``` css
+#yinyang > .one > .circle{
+    border: 1px solid green;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background:#ffffff;
+        /* 绝对定位 */
+    position: absolute;
+    left: 40px;
+    top: 40px;
+
+}
+#yinyang > .two > .circle{
+    border: 1px solid green;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background:#000000;
+        /* 绝对定位 */
+    position: absolute;
+    left: 40px;
+    top: 40px;
+
+}
+```
 
 
