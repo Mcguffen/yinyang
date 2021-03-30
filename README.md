@@ -503,5 +503,3 @@ tsconfig.json
 
 #### npx parcel build --public-url ./ index.html
 
-### 手机适配
-不用。。。
