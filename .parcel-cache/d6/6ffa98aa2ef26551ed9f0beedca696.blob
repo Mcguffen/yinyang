@@ -1,8 +1,8 @@
-console.log("hi")
-var yinyang = document.getElementById("yinyang")
-let html = document.getElementById('html')
+console.log("hi");
+var yinyang = document.getElementById("yinyang");
+let html = document.getElementById('html');
 // 写样式
-let style = document.querySelector('#style')
+let style = document.querySelector('#style');
 let string = `
 /*你好，html我们已经写好了,接下来我要加样式了。
 首先,去掉浏览器自带的样式。*/
@@ -142,96 +142,88 @@ border 自己调整大小 宽高 颜色
   /* 不会用就搜 你要的属性+generator */
   box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.75); 
 }
-/*
-太极完成啦！太极是可以被拖动的哦。不信你试试。
-*/
+
 
 `;
-let string2 = ''
+let string2 = '';
 // 这个replace只会把第一个回车变成换行
 // 我们要用到正则表达式了
 // 然后又发现了一个bug 他会打出<来
 // string=string.replace(/\n/g,"<br>")
-let n = 0
+let n = 0;
 // 通过setTimeout模拟了setInterval
 // 这样做的好处是可以随时停止
 let step = () => {
-    setTimeout(() => {
-        if(html){
-            if (string[n] === '\n') {
-                string2 += '<br>'
-            } else if (string[n] === ' ') {
-                // 如果是空格
-                string2 += '&nbsp'
-            } else {
-                // 如果不是回车就照搬
-                string2 += string[n]
-            }
-            html.innerHTML = string2
-            if(style){
-                style.innerHTML = string.substring(0, n)
-            }
-            window.scrollTo(0,9999)
-            html.scrollTo(0,9999)
-            if (n < string.length - 1) {
-                // 不是最后一个
-                step();
-                n++
-            } else { }
-        }
-
-    }, 30)
-}
-step()
-
-console.log(yinyang)
+  setTimeout(() => {
+    if (html) {
+      if (string[n] === '\n') {
+        string2 += '<br>';
+      } else if (string[n] === ' ') {
+        // 如果是空格
+        string2 += '&nbsp';
+      } else {
+        // 如果不是回车就照搬
+        string2 += string[n];
+      }
+      html.innerHTML = string2;
+      if (style) {
+        style.innerHTML = string.substring(0, n);
+      }
+      window.scrollTo(0, 9999);
+      html.scrollTo(0, 9999);
+      if (n < string.length - 1) {
+        // 不是最后一个
+        step();
+        n++;
+      } else {}
+    }
+  }, 30);
+};
+step();
+console.log(yinyang);
 // 设置个开关 来判断什么时候可以拖拽什么时候停下。
-var dragging: boolean = false
-
+var dragging = false;
 // 记录鼠标位置
-var position = [0, 0]
+var position = [0, 0];
 // div1 不为空执行下面
-if(yinyang){
-// 鼠标点下不松
-yinyang.onmousedown = function(e){
-
-    dragging = true
-        // 鼠标按下的时候记录鼠标位置
-    position = [e.clientX,e.clientY]
-}
-
-document.onmousemove = function(e){
-        // console.log(e.clientX, e.clientY)
-        if(dragging === true){
-            // console.log(e.clientX, e.clientY)
-            var deltaX = e.clientX - position[0]
-            var deltaY = e.clientY - position[1]
-            if(yinyang){
-            // 由于js有bug div.style.top只有取得内敛样式里面的值 并不能取得 外链css里面的值
-            console.log('yinyang.style.top')
-            console.log(yinyang.style.top)
-
-            var top = parseInt(yinyang.style.top) || 0
-            var left = parseInt(yinyang.style.left) || 0
-            // 防止div跑出页面 下面是 防止往左和防止放上 那么如果往右和往下呢？
-            var resultY = top + deltaY
-            var resultX = left + deltaX
-            // if(resultY < 0){
-            //     resultY = 0
-            // }
-            // if(resultX< 0){
-            //     resultX = 0
-            // }
-            yinyang.style.top = resultY + 'px'
-            yinyang.style.left = resultX + 'px'
-            // 然后发现数值很离谱 那是因为我们应该是每次移动和上次的位置对比
-            position[0] = e.clientX
-            position[1] = e.clientY
-        }
+if (yinyang) {
+  // 鼠标点下不松
+  yinyang.onmousedown = function (e) {
+    dragging = true;
+    // 鼠标按下的时候记录鼠标位置
+    position = [e.clientX, e.clientY];
+  };
+  document.onmousemove = function (e) {
+    // console.log(e.clientX, e.clientY)
+    if (dragging === true) {
+      // console.log(e.clientX, e.clientY)
+      var deltaX = e.clientX - position[0];
+      var deltaY = e.clientY - position[1];
+      if (yinyang) {
+        // 由于js有bug div.style.top只有取得内敛样式里面的值 并不能取得 外链css里面的值
+        console.log('yinyang.style.top');
+        console.log(yinyang.style.top);
+        var top = parseInt(yinyang.style.top) || 0;
+        var left = parseInt(yinyang.style.left) || 0;
+        // 防止div跑出页面 下面是 防止往左和防止放上 那么如果往右和往下呢？
+        var resultY = top + deltaY;
+        var resultX = left + deltaX;
+        // if(resultY < 0){
+        // resultY = 0
+        // }
+        // if(resultX< 0){
+        // resultX = 0
+        // }
+        yinyang.style.top = resultY + 'px';
+        yinyang.style.left = resultX + 'px';
+        // 然后发现数值很离谱 那是因为我们应该是每次移动和上次的位置对比
+        position[0] = e.clientX;
+        position[1] = e.clientY;
+      }
     }
-}
-    // 鼠标松开
-    document.onmouseup = function(){
-        dragging = false
-    }
+  };
+  // 鼠标松开
+  document.onmouseup = function () {
+    dragging = false;
+  };
 }

@@ -1,0 +1,21 @@
+
+  @media (max-width: 500px) {
+    html {
+      font-size: 5px;
+    }
+    #html {
+      height: 300px;
+      overflow: auto;
+    }
+    #divWrapper {
+      position: relative;
+      height: 300px;
+      width: 100%;
+    }
+    #yinyang {
+      position: absolute;
+      top: 27%;
+      right: 20%;
+    }
+  }
+/*# sourceMappingURL=index.f556d9ac.css.map */
